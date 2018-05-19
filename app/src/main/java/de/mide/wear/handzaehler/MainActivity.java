@@ -31,6 +31,7 @@ public class MainActivity extends WearableActivity
      * registriert "this"-Objekt als Event-
      * Handler-Objekt für die beiden Buttons.
      */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,15 +41,13 @@ public class MainActivity extends WearableActivity
 
         _zahlTextView = findViewById( R.id.zahlTextView );
 
-        aktualisiereZaehlerAnzeige();
-
-
         _plusButton  = findViewById( R.id.plusButton  );
         _minusButton = findViewById( R.id.minusButton );
 
         _plusButton.setOnClickListener ( this );
         _minusButton.setOnClickListener( this );
 
+        aktualisiereZaehlerAnzeige();
 
         setAmbientEnabled(); // Enables Always-on
     }
@@ -57,8 +56,16 @@ public class MainActivity extends WearableActivity
     /**
      * Text von UI-Element mit Zähler-Wert aktualisieren.
      */
+
     protected void aktualisiereZaehlerAnzeige() {
+
         _zahlTextView.setText( _zaehler + "" );
+
+        if ( _zaehler == 0) {
+            _minusButton.setEnabled(false);
+        } else {
+            _minusButton.setEnabled(true);
+        }
     }
 
 
