@@ -2,12 +2,13 @@ package de.mide.wear.handzaehler;
 
 import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends WearableActivity
-                          implements View.OnClickListener {
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+
+public class MainActivity extends WearableActivity {
 
     /** Member-Variable mit dem aktuellen Zähler-Wert. */
     protected int _zaehler = -1;
@@ -16,12 +17,6 @@ public class MainActivity extends WearableActivity
      *  mit Zähler-Wert repräsentiert.
      */
     protected TextView _zahlTextView = null;
-
-    /** Java-Objekt für Plus-Button auf UI. */
-    protected Button _plusButton = null;
-
-    /** Java-Objekt für Plus-Button auf UI. */
-    protected Button _minusButton = null;
 
 
     /**
@@ -42,13 +37,7 @@ public class MainActivity extends WearableActivity
 
         aktualisiereZaehlerAnzeige();
 
-
-        _plusButton  = findViewById( R.id.plusButton  );
-        _minusButton = findViewById( R.id.minusButton );
-
-        _plusButton.setOnClickListener ( this );
-        _minusButton.setOnClickListener( this );
-
+        ButterKnife.bind(this); // !!! Nicht vergessen !!!
 
         setAmbientEnabled(); // Enables Always-on
     }
@@ -62,24 +51,17 @@ public class MainActivity extends WearableActivity
     }
 
 
-    /**
-     * Event-Handler-Methode für Betätigung des Plus- oder Minus-Buttons.
-     *
-     * @param v Referenz auf Objekt, welches das Event ausgelöst hatte
-     *          (also Button, der "gedrückt" wurde).
-     */
-    @Override
-    public void onClick(View v) {
+    /** Methode wird über Butterknife-Annotation als Event-Handler zugewiesen. */
+    @OnClick(R.id.plusButton)
+    public void onPlusButton() {
+        _zaehler++;
+        aktualisiereZaehlerAnzeige();
+    }
 
-        if (v == _plusButton) {
-
-            _zaehler++;
-
-        } else if (v == _minusButton) {
-
-            _zaehler--;
-        }
-
+    /** Methode wird über Butterknife-Annotation als Event-Handler zugewiesen. */
+    @OnClick(R.id.minusButton)
+    public void onMinusButton() {
+        _zaehler--;
         aktualisiereZaehlerAnzeige();
     }
 
