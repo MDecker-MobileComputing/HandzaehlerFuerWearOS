@@ -6,8 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends WearableActivity
-                          implements View.OnClickListener {
+public class MainActivity extends WearableActivity {
+
 
     /** Member-Variable mit dem aktuellen Zähler-Wert. */
     protected int _zaehler = -1;
@@ -16,12 +16,6 @@ public class MainActivity extends WearableActivity
      *  mit Zähler-Wert repräsentiert.
      */
     protected TextView _zahlTextView = null;
-
-    /** Java-Objekt für Plus-Button auf UI. */
-    protected Button _plusButton = null;
-
-    /** Java-Objekt für Plus-Button auf UI. */
-    protected Button _minusButton = null;
 
 
     /**
@@ -42,14 +36,6 @@ public class MainActivity extends WearableActivity
 
         aktualisiereZaehlerAnzeige();
 
-
-        _plusButton  = findViewById( R.id.plusButton  );
-        _minusButton = findViewById( R.id.minusButton );
-
-        _plusButton.setOnClickListener ( this );
-        _minusButton.setOnClickListener( this );
-
-
         setAmbientEnabled(); // Enables Always-on
     }
 
@@ -62,24 +48,15 @@ public class MainActivity extends WearableActivity
     }
 
 
-    /**
-     * Event-Handler-Methode für Betätigung des Plus- oder Minus-Buttons.
-     *
-     * @param v Referenz auf Objekt, welches das Event ausgelöst hatte
-     *          (also Button, der "gedrückt" wurde).
-     */
-    @Override
-    public void onClick(View v) {
+    /** Methode wird in Layout-Datei über XML-Attribut zugewiesen. */
+    public void onPlusButton(View v) {
+        _zaehler++;
+        aktualisiereZaehlerAnzeige();
+    }
 
-        if (v == _plusButton) {
-
-            _zaehler++;
-
-        } else if (v == _minusButton) {
-
-            _zaehler--;
-        }
-
+    /** Methode wird in Layout-Datei über XML-Attribut zugewiesen. */
+    public void onMinusButton(View v) {
+        _zaehler--;
         aktualisiereZaehlerAnzeige();
     }
 
