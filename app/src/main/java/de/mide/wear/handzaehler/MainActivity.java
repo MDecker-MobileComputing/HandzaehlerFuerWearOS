@@ -6,8 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends WearableActivity
-                          implements View.OnClickListener {
+public class MainActivity extends WearableActivity {
 
     /** Member-Variable mit dem aktuellen Zähler-Wert. */
     protected int _zaehler = -1;
@@ -46,11 +45,29 @@ public class MainActivity extends WearableActivity
         _plusButton  = findViewById( R.id.plusButton  );
         _minusButton = findViewById( R.id.minusButton );
 
-        _plusButton.setOnClickListener ( this );
-        _minusButton.setOnClickListener( this );
+        MeinButtonEventHandler mbeh = new MeinButtonEventHandler(this);
 
+        _plusButton.setOnClickListener ( mbeh );
+        _minusButton.setOnClickListener( mbeh );
 
         setAmbientEnabled(); // Enables Always-on
+    }
+
+
+    public Button getPlusButton() {
+        return _plusButton;
+    }
+
+    public Button getMinusButton() {
+        return _minusButton;
+    }
+
+    public void erhoeheZaehlerUmEins() {
+        _zaehler++;
+    }
+
+    public void vermindereZaehlerUmEins() {
+        _zaehler--;
     }
 
 
@@ -68,20 +85,7 @@ public class MainActivity extends WearableActivity
      * @param v Referenz auf Objekt, welches das Event ausgelöst hatte
      *          (also Button, der "gedrückt" wurde).
      */
-    @Override
-    public void onClick(View v) {
 
-        if (v == _plusButton) {
-
-            _zaehler++;
-
-        } else if (v == _minusButton) {
-
-            _zaehler--;
-        }
-
-        aktualisiereZaehlerAnzeige();
-    }
 
 }
 
