@@ -18,3 +18,8 @@ The repository contains several variations of the app in different branches.
 
 ![Screenshot 2: Zähler auf 1](Screenshot_2.png)
 
+
+----
+# License
+
+See the [LICENSE file](LICENSE.md) for license rights and limitations (BSD 3-Clause License).
