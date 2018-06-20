@@ -10,6 +10,7 @@ so it is easier to see what the programmer had to add.
 
 The repository contains several variations of the app in different branches.
 
+<br>
 
 ----
 ## Screenshots
@@ -18,6 +19,7 @@ The repository contains several variations of the app in different branches.
 
 ![Screenshot 2: Zähler auf 1](Screenshot_2.png)
 
+<br>
 
 ----
 # License
