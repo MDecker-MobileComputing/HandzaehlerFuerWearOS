@@ -6,14 +6,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+/**
+ * This project is licensed under the terms of the BSD 3-Clause License.
+ */
 public class MainActivity extends WearableActivity
                           implements View.OnClickListener {
 
-    /** Member-Variable mit dem aktuellen Zähler-Wert. */
+    /**
+     * Member-Variable mit dem aktuellen Zähler-Wert.
+     */
     protected int _zaehler = -1;
 
-    /** Referenz auf Java-Objekt, das TextView-Element
-     *  mit Zähler-Wert repräsentiert.
+    /**
+     * Referenz auf Java-Objekt, das TextView-Element
+     * mit Zähler-Wert repräsentiert.
      */
     protected TextView _zahlTextView = null;
 
@@ -25,11 +31,9 @@ public class MainActivity extends WearableActivity
 
 
     /**
-     * Lifecycle-Methode: Lädt Layout-Datei,
-     * initialisiert Zähler-Variable, füllt
-     * Member-Variablen für die UI-Elemente,
-     * registriert "this"-Objekt als Event-
-     * Handler-Objekt für die beiden Buttons.
+     * Lifecycle-Methode: Lädt Layout-Datei, initialisiert Zähler-Variable, füllt
+     * Member-Variablen für die UI-Elemente,registriert "this"-Objekt als
+     * Event-Handler-Objekt für die beiden Buttons.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
