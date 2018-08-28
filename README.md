@@ -15,9 +15,7 @@ The repository contains several variations of the app in different branches.
 ----
 ## Screenshots
 
-![Screenshot 1: Zähler auf 0](Screenshot_1.png)
-
-![Screenshot 2: Zähler auf 1](Screenshot_2.png)
+![Screenshot 1: Zähler auf 0](Screenshot_1.png)  ![Screenshot 2: Zähler auf 1](Screenshot_2.png)
 
 <br>
 
