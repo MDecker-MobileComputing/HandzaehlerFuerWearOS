@@ -13,7 +13,7 @@ The repository contains several variations of the app in different branches.
 <br>
 
 
-See [this repository](https://github.com/MDecker-MobileComputing/Android_Handzaehler) for an tally counter app for "ordinary" Android devices (i.e. smartphones & tablets rather than smartwatches).
+See [this repository](https://github.com/MDecker-MobileComputing/Android_Handzaehler) for a tally counter app for "ordinary" Android devices (i.e. smartphones & tablets instead of smartwatches).
 
 <br>
 
