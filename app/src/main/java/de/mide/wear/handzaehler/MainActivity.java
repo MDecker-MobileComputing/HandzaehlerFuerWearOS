@@ -6,7 +6,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+
 /**
+ * Activity for WearOS app representing a simple tally counter.
+ * <br><br>
+ *
  * This project is licensed under the terms of the BSD 3-Clause License.
  */
 public class MainActivity extends WearableActivity
@@ -26,7 +30,7 @@ public class MainActivity extends WearableActivity
     /** Java-Objekt für Plus-Button auf UI. */
     protected Button _plusButton = null;
 
-    /** Java-Objekt für Plus-Button auf UI. */
+    /** Java-Objekt für Minus-Button auf UI. */
     protected Button _minusButton = null;
 
 
