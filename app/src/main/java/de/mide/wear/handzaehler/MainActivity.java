@@ -16,15 +16,11 @@ import android.widget.TextView;
 public class MainActivity extends WearableActivity
                           implements View.OnClickListener {
 
-    /**
-     * Member-Variable mit dem aktuellen Zähler-Wert.
-     */
+
+    /** Member-Variable mit dem aktuellen Zähler-Wert. */
     protected int _zaehler = -1;
 
-    /**
-     * Referenz auf Java-Objekt, das TextView-Element
-     * mit Zähler-Wert repräsentiert.
-     */
+    /** Referenz auf Java-Objekt, das TextView-Element mit Zähler-Wert repräsentiert. */
     protected TextView _zahlTextView = null;
 
     /** Java-Objekt für Plus-Button auf UI. */
@@ -41,6 +37,7 @@ public class MainActivity extends WearableActivity
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -66,6 +63,7 @@ public class MainActivity extends WearableActivity
      * Text von UI-Element mit Zähler-Wert aktualisieren.
      */
     protected void aktualisiereZaehlerAnzeige() {
+
         _zahlTextView.setText( _zaehler + "" );
     }
 
@@ -73,17 +71,17 @@ public class MainActivity extends WearableActivity
     /**
      * Event-Handler-Methode für Betätigung des Plus- oder Minus-Buttons.
      *
-     * @param v Referenz auf Objekt, welches das Event ausgelöst hatte
-     *          (also Button, der "gedrückt" wurde).
+     * @param view  Referenz auf Objekt, welches das Event ausgelöst hatte
+     *              (also Button, der "gedrückt" wurde).
      */
     @Override
-    public void onClick(View v) {
+    public void onClick(View view) {
 
-        if (v == _plusButton) {
+        if (view == _plusButton) {
 
             _zaehler++;
 
-        } else if (v == _minusButton) {
+        } else if (view == _minusButton) {
 
             _zaehler--;
         }
